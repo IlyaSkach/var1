@@ -79,8 +79,13 @@ header nav {
 }
 
 header nav a {
-    color: white;
+    color:  white ;
     text-decoration: none; /* Убираем подчеркивание */
+}
+
+header nav a:hover {
+    color: #B5C8D6; /* Изменение цвета текста при наведении */
+    text-decoration: underline; /* Добавление подчеркивания при наведении */
 }
 
 .social-icons {
@@ -127,6 +132,8 @@ h2 {
     header nav {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
+        margin: 10px 0;
     }
     .container {
         width: auto;
