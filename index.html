@@ -1,34 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фулфилмент-услуги</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header class="container">
-        <img src="./flogo.webp" alt="logo" class="logo">
-        <nav>
-            <a href="#why">Почему мы?</a>
-            <a href="#how">Как это работает?</a>
-        </nav>
-        <div class="social-icons">
-            <a href="tel:+79999999999">
-                +7 (999) 999 99 99
-            </a>
+    <div class="start-screen">
+        <header class="container">
+            <img src="./assets/flogo.webp" alt="logo" class="logo">
+            <nav>
+                <a href="#why">Почему мы?</a>
+                <a href="#how">Как это работает?</a>
+            </nav>
+            <div class="social-icons">
+                <a href="tel:+79999999999">
+                    +7 (999) 999 99 99
+                </a>
+            </div>
+        </header>
+        <section class="hero">
+            <video autoplay muted loop class="background-video">
+                <source src="./assets/bgvideo.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <div class="hero-content container">
+                <h1>Фокусируйтесь на главном!</h1>
+                <h2>Вы сможете сосредоточиться на главных задачах, доверив нам рутинные процессы. Делегируйте с
+                    уверенностью
+                    – качество гарантировано!</h2>
+                <p>Комплексные фулфилмент-услуги для маркетплейсов: хранение, упаковка, доставка, обработка возвратов.
+                </p>
+            </div>
+        </section>
+        <section id="why" class="why-section container">
+            <h2>Почему мы?</h2>
+            <h3>Наши преимущества</h3>
+            <div class="cards">
+                <div class="card">
+                    <img src="./assets/card1.png" alt="Преимущество 1">
+                    <h4>Быстрая обработка заказов (отправка за 24 часа)</h4>
+                </div>
+                <div class="card">
+                    <img src="./assets/card3.png" alt="Преимущество 2">
+                    <h4>Оптимизация затрат на логистику</h4>
+                </div>
+                <div class="card">
+                    <img src="./assets/card2.png" alt="Преимущество 3">
+                    <h4>Интеграция с основными маркетплейсами (Ozon, Wildberries, Яндекс.Маркет и др.)</h4>
+                </div>
+                <div class="card">
+                    <img src="./assets/card4.png" alt="Преимущество 4">
+                    <h4>Прозрачное ценообразование</h4>
+                </div>
+            </div>
+        </section>
+
+        <button class="calc-button" onclick="startQuiz()">Получить расчет</button>
+    </div>
+    <!-- Экран квиза (скрыт по умолчанию) -->
+    <div class="quiz-screen" style="display: none;">
+        <!-- Блок с аватаром, кнопкой звонка и прогресс-баром -->
+        <div class="header-block">
+            <div class="sidebar">
+                <div class="avatar operator-avatar">
+                    <img src="./assets/olga.gif" alt="avatar">
+                </div>
+                <button class="call-button" onclick="window.location.href='/index.html'"
+                    style="display: none;">Ольга,
+                    менеджер</button>
+            </div>
+            <div class="welcome-text" style="display: none;">
+                Здрастуйте, моё имя Ольга! Начнем расчет?
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
         </div>
-    </header>
-    <section class="hero">
-        <video autoplay muted loop class="background-video">
-            <source src="./bgvideo.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-        <div class="hero-content container">
-            <h1>Фокусируйтесь на главном!</h1>
-            <h2>Вы сможете сосредоточиться на главных задачах, доверив нам рутинные процессы. Делегируйте с уверенностью – качество гарантировано!</h2>
-            <p>Комплексные фулфилмент-услуги для маркетплейсов: хранение, упаковка, доставка, обработка возвратов.</p>
-        </div>
-    </section>
+
+        <main>
+            <div class="chat">
+                <!-- Начальный вопрос (скрыт по умолчанию) -->
+                <div class="chat-message operator" id="question-1" style="display: none;">
+                    <div class="avatar operator-avatar">
+                        <img src="./assets/olga.gif" alt="avatar">
+                    </div>
+                    <div class="message">Какая у Вас категория товаров?</div>
+                    <div class="options">
+                        <button class="option first" onclick="nextQuestion(1, 'Товары для дома')">
+
+                            <p class="answertext">Товары для дома</p>
+                        </button>
+                        <button class="option first" onclick="nextQuestion(1, 'Одежда')">
+
+                            <p class="answertext">Одежда</p>
+                        </button>
+                        <button class="option first" onclick="nextQuestion(1, 'Детские товары')">
+
+                            <p class="answertext">Детские товары</p>
+                        </button>
+                        <button class="option first" onclick="nextQuestion(1, 'Электроника')">
+
+                            <p class="answertext">Электроника</p>
+                        </button>
+                        <button class="option first" onclick="nextQuestion(1, 'Автотовары')">
+
+                            <p class="answertext">Автотовары</p>
+                        </button>
+                        <button class="option first" onclick="nextQuestion(1, 'Другие')">
+
+                            <p class="answertext">Другие</p>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    	<!-- Финальный экран (скрыт по умолчанию) -->
+	<div class="final-screen" style="display: none;">
+		<div class="chat-message">
+			<div class="avatar operator-avatar">
+				<img src="./assets/olga.gif" alt="avatar">
+			</div>
+			<div class="message" id="final-message"></div>
+		</div>
+	</div>
+
+    <div id="popup" class="popup">
+		<div class="popup-content">
+			<span class="close-button" onclick="closePopup()">&times;</span>
+			<p id="popup-message"></p>
+		</div>
+	</div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
